@@ -1,0 +1,92 @@
+.tttgallery-search input {
+	width: 100%;
+}
+.tttgallery-search .item {
+	background: #fff;
+	border-radius: 3px;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+.tttgallery-search .item ul {
+	padding: 0px;
+	margin: 0px;
+}
+.tttgallery-search .item ul li {
+	display: inline-block;
+	padding: 0px 13px;
+	margin: 0px;
+	vertical-align: middle;
+}
+.tttgallery-search .item ul li label {
+	text-decoration: underline;
+}
+
+.tttgallery-metabox {
+	border-bottom: 2px dotted #ccc;
+	padding: 10px;
+	position: relative;
+}
+.tttgallery-metabox ul li {
+	display: inline-table;
+    width: 140px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+}
+.tttgallery-metabox ul li img {
+	width: 80px;
+	height: 80px;
+	text-align: center;
+    border-radius: 2px;
+}
+.tttgallery-metabox ul li .icon {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    background: #ccc;
+    line-height: 80px;
+    font-weight: bold;
+    display: inline-table;
+    border-radius: 2px;
+}
+.tttgallery-content {
+	display: block;
+	position: relative;
+
+}
+.tttgallery-content .tttgallery-description {
+    width: 100%;
+    font-size: 1.3em;
+    background: #F1F1F1;
+    text-align: center;
+    box-shadow: 1px 1px 1px #ccc;
+    border-radius: 2px;
+    padding: 6px 0px;
+    font-weight: normal;
+}
+    
+.tttgallery-content .drag {
+	background: url('../images/1370702690_list_lines.png') 0px 0px repeat-y transparent;
+	display: inline-block;
+	width: 40px;
+	border-radius: 10px;
+	position: relative;
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	vertical-align: middle;
+}
+.tttgallery-content .drag span {
+	display: none;
+}
+.tttgallery-content .content {
+	position: relative;
+	display: inline-block;
+	position: relative;
+	display: inline-block;
+	margin-left: 58px;
+}
+.tttgallery-invoke-remove {
+	float: right;
+	box-shadow: 1px 1px 1px red;
+}
