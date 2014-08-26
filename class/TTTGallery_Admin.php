@@ -89,6 +89,14 @@ class TTTGallery_Admin extends TTTGallery_Common {
     public function create($params = false) {
         global $wpdb;
 
+        if (
+            !isset($params['medias']) ||
+            !is_array($params['medias']) ||
+            count($params['medias']) < 1
+        ) {
+            return false;
+        }
+
         $wpdb->insert( $this->table_name, array(
             'medias' => join(',',$params['medias']),
             'created_at' => current_time('mysql'),

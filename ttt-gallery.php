@@ -42,7 +42,7 @@ function tttgallery_init () {
 		$TTTGallery_Front->init();
 	}
 	else {
-		global $TTTGallery_Front;
+		global $TTTGallery_Admin;
 		$TTTGallery_Admin = new TTTGallery_Admin();
 		$TTTGallery_Admin->init();
 	}
