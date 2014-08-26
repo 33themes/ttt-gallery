@@ -87,6 +87,7 @@ class TTTGallery_Admin extends TTTGallery_Common {
     }
 
     public function create($params = false) {
+        global $wpdb;
 
         $wpdb->insert( $this->table_name, array(
             'medias' => join(',',$params['medias']),
@@ -115,8 +116,6 @@ class TTTGallery_Admin extends TTTGallery_Common {
 
     public function create_callback() {
         $this->_header_callback();
-
-        global $wpdb;
 
         $this->create($_REQUEST);
 
