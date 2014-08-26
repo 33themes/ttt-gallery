@@ -86,22 +86,18 @@ class TTTGallery_Admin extends TTTGallery_Common {
 		die();
 	}
 
-	public function create_callback() {
-		$this->_header_callback();
-
-		global $wpdb;
-
+    public function create($params = false) {
 
 		$wpdb->insert( $this->table_name, array(
-			'medias' => join(',',$_REQUEST['medias']),
+			'medias' => join(',',$params['medias']),
 			'created_at' => current_time('mysql'),
-			'description' => $_REQUEST['description']
+			'description' => $params['description']
 		));
 
 		$id = $wpdb->insert_id;
 
-		if ( isset($_REQUEST['post']) ) {
-			$post_id = $_REQUEST['post'];
+		if ( isset($params['post']) ) {
+			$post_id = $params['post'];
 			if ( $meta = get_post_meta(  $post_id, 'tttgallery', true) ) {
 				$meta[] = $id;
 				$meta = $this->_reorder( $meta );
@@ -115,23 +111,38 @@ class TTTGallery_Admin extends TTTGallery_Common {
 			}
 		}
 
+    }
+
+	public function create_callback() {
+		$this->_header_callback();
+
+        global $wpdb;
+
+        $this->create($_REQUEST);
+
 		echo json_encode(array(
 			'success'=>true,
 			'id' => $id,
 			'debug'=>$_REQUEST
 		));
 		die();
-	}
+    }
+
+    public function remove($params) {
+
+        if ( !isset($params['id']) || !is_numeric($params['id']) || $params['id'] < 1 ) return;
+
+		global $wpdb;
+
+		return $wpdb->query( $wpdb->prepare("DELETE FROM ".$this->table_name." WHERE id = ". (int) $_REQUEST['id'] ) );
+    }
 
 	public function remove_callback() {
 		$this->_header_callback();
 		
-		if ( !isset($_REQUEST['id']) || !is_numeric($_REQUEST['id']) || $_REQUEST['id'] < 1 ) return;
+        if ( !isset($_REQUEST['id']) || !is_numeric($_REQUEST['id']) || $_REQUEST['id'] < 1 ) return;
 
-		global $wpdb;
-
-
-		$wpdb->query( $wpdb->prepare("DELETE FROM ".$this->table_name." WHERE id = ". (int) $_REQUEST['id'] ) );
+        $this->remove($_REQUEST);
 
 		echo json_encode(array(
 			'success'=>true,
@@ -163,21 +174,19 @@ class TTTGallery_Admin extends TTTGallery_Common {
 			'debug'=>$_REQUEST
 		));
 		die();
-	}
+    }
 
-	public function update_callback() {
-		$this->_header_callback();
-
-		if ( !isset($_REQUEST['id']) || !is_numeric($_REQUEST['id']) || $_REQUEST['id'] < 1 ) return;
+    public function update($params = false) {
+        if ( !isset($params['id']) || !is_numeric($params['id']) || $params['id'] < 1 ) return;
 
 		global $wpdb;
 		
-		$id = $_REQUEST['id'];
+		$id = $params['id'];
 
 
 		$s = $wpdb->update( $this->table_name, array(
-			'medias' => join(',',$_REQUEST['medias']),
-			'description' => $_REQUEST['description']
+			'medias' => join(',',$params['medias']),
+			'description' => $params['description']
 		),array(
 			'id' => $id
 		),array(
@@ -185,8 +194,8 @@ class TTTGallery_Admin extends TTTGallery_Common {
 		),array('%d') );
 
 
-		if ( isset($_REQUEST['post']) ) {
-			$post_id = $_REQUEST['post'];
+		if ( isset($params['post']) ) {
+			$post_id = $params['post'];
 			if ( $meta = get_post_meta(  $post_id, 'tttgallery', true) ) {
 				$meta[] = $id;
 				$meta = $this->_reorder( $meta );
@@ -199,6 +208,12 @@ class TTTGallery_Admin extends TTTGallery_Common {
 				update_post_meta( $post_id, 'tttgallery', $meta );
 			}
 		}
+    }
+
+	public function update_callback() {
+		$this->_header_callback();
+
+        $this->update($_REQUEST);
 
 		echo json_encode(array(
 			'success'=>true,
