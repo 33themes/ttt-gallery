@@ -216,7 +216,7 @@ class TTTGallery_Common {
             $gallery->template = $attr['template'];
 
         if ( !$gallery->template ) 
-            $gallery->template = 'default';
+            $gallery->template = 'default-image';
 
         $gallery->rel = $_id.'-'.$gallery->id;
 
