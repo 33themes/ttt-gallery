@@ -85,8 +85,18 @@
     position: relative;
     display: inline-block;
     margin-left: 58px;
+    width: 94%;
 }
 .tttgallery-invoke-remove {
     float: right;
     box-shadow: 1px 1px 1px red;
+}
+
+.tttgallery-content textarea {
+    background: #E9E9E9;
+    resize: none;
+    display: block;
+    width:100%;
+    overflow:hidden;
+    border: 0px solid;
 }

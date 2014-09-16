@@ -51,9 +51,9 @@
             </li>
             <% }); %>
         </ul>
-        <code><?php _e('Calling the gallery examples', parent::sname);?>: [tttgallery] [tttgallery template="default"] [tttgallery id="<%=id%>"] [tttgallery id="<%=id%>" template="default"]</code>
+        <textarea readonly><?php _e('Calling the gallery examples', parent::sname);?>: [tttgallery] [tttgallery template="default"] [tttgallery id="<%=id%>"] [tttgallery id="<%=id%>" template="default"]</textarea>
         <br>
-        <code><?php _e('Calling each image examples' , parent::sname);?>: [ttt-gallery-image position="1"] [ttt-gallery-image id="<%=id%>" position="1" template="default"] </code>
+        <textarea readonly><?php _e('Calling each image examples' , parent::sname);?>: [ttt-gallery-image position="1"] [ttt-gallery-image id="<%=id%>" position="1" template="default"] </textarea>
         <br>
         <br>
         <a class="button tttgallery-invoke-edit"><?php _e('Edit gallery',parent::sname); ?></a>
