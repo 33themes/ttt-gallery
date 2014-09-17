@@ -25,8 +25,10 @@
             </td>
             <td class="column-icon media-icon">
                 <a class="tttgallery-invoke-edit" href="#">
-                    <% if (typeof(medias[0].sizes) != "undefined" && typeof(medias[0].sizes.thumbnail) != "undefined") { %>
-                        <img width="60" height="60" src="<%=medias[0].sizes.thumbnail.url%>" class="attachment-80x60">
+                    <% if (typeof(medias[0]) != "undefined") { %>
+                        <% if (typeof(medias[0].sizes) != "undefined" && typeof(medias[0].sizes.thumbnail) != "undefined") { %>
+                            <img width="60" height="60" src="<%=medias[0].sizes.thumbnail.url%>" class="attachment-80x60">
+                        <% } %>
                     <% } %>
                 </a>
             </td>
