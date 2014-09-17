@@ -25,7 +25,7 @@
 <div class="item tttgallery-gallery" style="display:none;" data-galleryid="<%=id%>">
     <ul>
         <li><input class="button" type="button" value="<?php _e('Add',parent::sname); ?>"/></li>
-        <% if (typeof(medias[0].sizes) != "undefined") { %>
+        <% if (typeof(medias[0].sizes) != "undefined" && typeof(medias[0].sizes.thumbnail) != "undefined") { %>
         <li><img src="<%=medias[0].sizes.thumbnail.url%>" width="30" height="30" /></li>
         <% } %>
         <li><strong><%=description%></strong></li>
@@ -42,7 +42,7 @@
         <ul>
             <% _.each( medias, function( image ){ %>
             <li data-id="<%=image.id%>" class="<%=image.type%>">
-                <% if (typeof(image.sizes) != "undefined") { %>
+                <% if (typeof(image.sizes) != "undefined" && typeof(image.sizes.thumbnail) != "undefined") { %>
                 <img src="<%=image.sizes.thumbnail.url%>" alt="<%=image.caption%>"/>
                 <% } else { %>
                 <div class="icon"><%=image.type%></div>
