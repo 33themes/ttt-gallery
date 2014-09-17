@@ -28,7 +28,7 @@ class TTTGallery extends TTTGallery_Front {
 
         $post_id = $this->post_id;
 
-        $gallery = $this->get_post_gallery_ids( $gallery_num, $this->post_id );
+        $gallery = $this->get_post_gallery( $gallery_num, $this->post_id );
         
         $post_thumbnail = array_shift( $gallery->medias );
         $post_thumbnail_id = $post_thumbnail['id'];
