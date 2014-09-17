@@ -233,11 +233,22 @@ class TTTGallery_Common {
     public function get_post_gallery( $num = 1, $post = false ) {
         if (!$post) $post = get_the_ID();
 
+        $meta = $this->get_post_gallery_ids($num, $post);
+
+        if ( $meta )
+            return $this->query_gallery( $meta );
+
+        return false;
+    }
+
+    public function get_post_gallery_ids( $num = 1, $post = false ) {
+        if (!$post) $post = get_the_ID();
+
         $num--;
         $meta = get_post_meta( $post, 'tttgallery', true);
 
         if ( isset($meta[ $num ]) )
-            return $this->query_gallery( (array) $meta[ $num ] );
+            return (array) $meta[ $num ];
 
         return false;
     }
