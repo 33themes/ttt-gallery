@@ -17,13 +17,14 @@ define('TTTVERSION_GALLERY', 0.1 );
 
 
 function ttt_autoload_gallery( $class ) {
-	if ( 0 !== strpos( $class, 'TTTGallery_' ) )
+	if ( 0 !== strpos( $class, 'TTTGallery' ) )
 		return;
 	
 	$file = TTTINC_GALLERY . '/class/' . $class . '.php';
-	if (is_file($file))
+    if (is_file($file)) {
 		require_once $file;
 		return true;
+    }
 	
 	throw new Exception("Unable to load $class at ".$file);
 }
@@ -32,6 +33,9 @@ if ( function_exists( 'spl_autoload_register' ) ) {
 	spl_autoload_register( 'ttt_autoload_gallery' );
 } else {
 	require_once TTTINC_GALLERy . '/class/TTTGallery_Common.php';
+	require_once TTTINC_GALLERy . '/class/TTTGallery_Admin.php';
+	require_once TTTINC_GALLERy . '/class/TTTGallery_Front.php';
+	require_once TTTINC_GALLERy . '/class/TTTGallery.php';
 }
 
 function tttgallery_init () {
