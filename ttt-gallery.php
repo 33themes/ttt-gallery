@@ -17,7 +17,7 @@ define('TTTVERSION_GALLERY', 0.1 );
 
 
 function ttt_autoload_gallery( $class ) {
-	if ( 0 !== strpos( $class, 'TTTGallery' ) )
+	if ( strpos( $class, 'TTTGallery' ) === false )
 		return;
 	
 	$file = TTTINC_GALLERY . '/class/' . $class . '.php';

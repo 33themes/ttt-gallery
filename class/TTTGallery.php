@@ -2,7 +2,6 @@
 
 class TTTGallery extends TTTGallery_Common {
     public function __construct( $post_id = false, $template = 'default' ) {
-        parent::__construct();
         parent::init();
         
         $this->post_id = $post_id;
