@@ -154,6 +154,10 @@ class TTTGallery_Common {
 
         $this->shortcode_counter[$_id]++;
 
+        if (has_filter('ttt_gallery_shortcode')) {
+            $gallery = apply_filters('ttt_gallery_shortcode', $gallery, $attr);
+        }
+
         return $this->template( $gallery, $attr );
     }
 
@@ -221,6 +225,10 @@ class TTTGallery_Common {
         $gallery->rel = $_id.'-'.$gallery->id;
 
         $this->shortcode_image_counter[$_id]++;
+
+        if (has_filter('ttt_gallery_image_shortcode')) {
+            $gallery = apply_filters('ttt_gallery_image_shortcode', $gallery, $attr);
+        }
 
         return $this->template( $gallery, $attr );
     }
