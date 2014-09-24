@@ -36,11 +36,11 @@
                 <strong>
                     <a class="tttgallery-invoke-edit tttgallery-description" href="#"><%=description%></a>
                 </strong>
-                <p><?php _e('Gallery size',parent::sname);?>: <strong><%=_.size(medias)%></strong></p>
+                <p><?php _e('Elements in',parent::sname);?>: <strong><%=_.size(medias)%></strong></p>
                 <p><%=_.map(medias,function(num, key) { return num.id; })%></p>
                 <div class="row-actions">
                     <span class="edit">
-                        <a class="tttgallery-invoke-edit" href="#"><?php _e('Editar',parent::sname); ?></a> | </span><span class="delete"><a class="submitdelete tttgallery-invoke-remove"  href="#"><?php _e('Delete permanently',parent::sname); ?></a>
+                        <a class="tttgallery-invoke-edit" href="#"><?php _e('Edit',parent::sname); ?></a> | </span><span class="delete"><a class="submitdelete tttgallery-invoke-remove"  href="#"><?php _e('Delete permanently',parent::sname); ?></a>
                     </span>
                 </div>
             </td>
@@ -53,7 +53,7 @@
 
     <form id="posts-filter" action="" method="get">
         <p class="search-box">
-            <label class="screen-reader-text" for="media-search-input">Buscar medios:</label>
+            <label class="screen-reader-text" for="media-search-input"><?php _e('Search',parent::sname); ?>:</label>
             <input type="search" id="media-search-input" name="s" value="">
             <input type="submit" name="" id="search-submit" class="button" value="Buscar medios">
         </p>
