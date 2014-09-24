@@ -55,7 +55,7 @@
         <p class="search-box">
             <label class="screen-reader-text" for="media-search-input"><?php _e('Search',parent::sname); ?>:</label>
             <input type="search" id="media-search-input" name="s" value="">
-            <input type="submit" name="" id="search-submit" class="button" value="Buscar medios">
+            <input type="submit" name="" id="search-submit" class="button" value="<?php _e('Search',parent::sname); ?>">
         </p>
         <br>
         <br>
