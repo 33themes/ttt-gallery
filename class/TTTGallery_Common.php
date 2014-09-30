@@ -121,7 +121,7 @@ class TTTGallery_Common {
         if ( ! $_id = get_the_ID() )
             $_id = 0;
 
-        if ( isset($attr['id']) ) {
+        if ( isset($attr['id']) && (int) $attr['id'] > 0 ) {
             $_gallery_id = (int) $attr['id'];
             $_id = -1;
             $gallery = $this->query_gallery( array($_gallery_id) );
@@ -165,7 +165,7 @@ class TTTGallery_Common {
         if ( ! $_id = get_the_ID() )
             $_id = 0;
 
-        if ( isset($attr['id']) ) {
+        if ( isset($attr['id']) && (int) $attr['id'] > 0 ) {
             $_gallery_id = (int) $attr['id'];
             $_id = -1;
             $gallery = $this->query_gallery( array($_gallery_id) );
