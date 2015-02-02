@@ -312,6 +312,7 @@ class TTTGallery_Common {
         ) ) );
         
         $query['post_type'] = array('attachment');
+        $query['ignore_sticky_posts'] = true;
         $query['post_status'] = 'inherit';
         if ( current_user_can( get_post_type_object( 'attachment' )->cap->read_private_posts ) )
             $query['post_status'] .= ',private';
