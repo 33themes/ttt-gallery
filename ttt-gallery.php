@@ -3,7 +3,7 @@
 Plugin Name: TTT Gallery
 Plugin URI: http://www.33themes.com
 Description: Simple and quickly gallery system
-Version: 0.1
+Version: 0.2
 Author: 33 Themes GmbH
 Author URI: http://www.33themes.com
 */
@@ -32,10 +32,10 @@ function ttt_autoload_gallery( $class ) {
 if ( function_exists( 'spl_autoload_register' ) ) {
     spl_autoload_register( 'ttt_autoload_gallery' );
 } else {
-    require_once TTTINC_GALLERy . '/class/TTTGallery_Common.php';
-    require_once TTTINC_GALLERy . '/class/TTTGallery_Admin.php';
-    require_once TTTINC_GALLERy . '/class/TTTGallery_Front.php';
-    require_once TTTINC_GALLERy . '/class/TTTGallery.php';
+    require_once TTTINC_GALLERY . '/class/TTTGallery_Common.php';
+    require_once TTTINC_GALLERY . '/class/TTTGallery_Admin.php';
+    require_once TTTINC_GALLERY . '/class/TTTGallery_Front.php';
+    require_once TTTINC_GALLERY . '/class/TTTGallery.php';
 }
 
 function tttgallery_init () {
