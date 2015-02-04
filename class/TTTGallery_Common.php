@@ -261,6 +261,8 @@ class TTTGallery_Common {
             $_gallery = $_clean;
         }
 
+        // Compatible with switch_to_blog
+        $this->table_name = $GLOBALS['table_prefix'].'tttgallery';
 
         $_sql = "SELECT * FROM ".$this->table_name;
         if ( $_gallery ) {
