@@ -51,6 +51,7 @@ class TTTGallery_Admin extends TTTGallery_Common {
             
         ?>
         <script type="text/html" id="tmpl-ttt-gallery-setting">
+            <div class="clear"></div>
             <h3><?php _e('TTT Gallery', parent::sname); ?></h3>
             <label>
                 <input class="tttgallery-description" type="text" value="test" placeholder="<?php _e('My gallery description', parent::sname ); ?>"/>
