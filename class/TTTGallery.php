@@ -4,7 +4,10 @@ class TTTGallery extends TTTGallery_Common {
     public function __construct( $post_id = false, $template = 'default' ) {
         parent::init();
         
-        $this->post_id = $post_id;
+        $this->post_id = get_the_ID();
+        if (is_numeric($post_id) && $post_id > 0)
+            $this->post_id = $post_id;
+
         $this->meta = get_post_meta( $this->post_id, 'tttgallery', true);
         $this->template = $template;
     }
@@ -53,7 +56,11 @@ class TTTGallery extends TTTGallery_Common {
     }
     
     public function the_gallery() {
-        echo $this->shortcode_callback(array( 'num' => count($this->meta)+1, 'template' => $this->template ));
+        echo $this->shortcode_callback(array(
+            'num' => count($this->meta)+1,
+            'template' => $this->template,
+            'post' => $this->post_id
+        ));
     }
 }
 
