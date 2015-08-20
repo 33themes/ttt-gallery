@@ -162,6 +162,7 @@ class TTTGallery_Common {
     }
 
     public function shortcode_image_callback( $attr ) {
+
         if ( ! $_id = get_the_ID() )
             $_id = 0;
 
@@ -186,9 +187,9 @@ class TTTGallery_Common {
             else
                 $_position = $this->shortcode_image_counter[ $_id ];
 
-            for ( $findnext=1; $findnext <= $_position; $findnext++ ) {
+            for ( $findnext=0; $findnext <= $_position; $findnext++ ) {
                 
-                $gallery = $this->get_post_gallery( $findnext, $_post );
+                $gallery = $this->get_post_gallery( $findnext+1, $_post );
                 if (!is_array($gallery)) break;
 
                 $gallery = array_shift($gallery);
@@ -201,7 +202,7 @@ class TTTGallery_Common {
         
         if ( !isset($this->shortcode_image_counter[ $_id ]) || $this->shortcode_image_counter[ $_id ] <= 0 )
                 $this->shortcode_image_counter[ $_id ] = 1;
-                
+
         if (is_array($gallery)) $gallery = $gallery[0];
 
         //if (!is_array($gallery)) return false;
