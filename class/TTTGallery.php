@@ -43,7 +43,7 @@ class TTTGallery extends TTTGallery_Common {
     public function have_galleries() {
         if (!is_array($this->meta) || count($this->meta) <= 0) return false;
 
-        return $c;
+        return count($this->meta);
     }
     
     public function next_gallery() {
