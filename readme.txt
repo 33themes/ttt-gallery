@@ -8,15 +8,13 @@ Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-First plugin which create a Gallery in the same simple way Featured Image is related to a Post
+TTT Gallery is a WordPress gallery plugin fully customizable.
 
-== Description ==
+## Description
 
-TTT Gallery attach the galleries created, the images are in the same Upload folder and can be use all thumbnails sizes seted in the theme or by plugins.
+TTT Gallery allows you to use your own templates to show galleries.
 
-Same user interface as WP core gallery creator, so you don´t feel any difference in the usability.
-
-Total freedom for templates markup, so you can use any kind of animation, structure, size of your images.
+The plugin uses the WP Gallery creator and you can use any thumbnail size set up in the theme or by plugins.
 
 = Create a Gallery =
 
