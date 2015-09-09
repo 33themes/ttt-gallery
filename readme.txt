@@ -1,6 +1,6 @@
 # TTT Gallery
 
-Contributors: 33themes, gabrielperezs, lonchbox, tomasog
+Contributors: 33themes, gabrielperezs, lonchbox, tomasog, 11bits
 Tags: image gallery, custom gallery template, gallery markup, post gallery, slider, gallery lightbox
 Requires at least: 3.7
 Tested up to: 4.3
@@ -16,11 +16,11 @@ TTT Gallery allows you to use your own templates to show galleries. You have ful
 
 This plugin uses the WP Gallery creator from the core and you can use any thumbnail size set up in the theme or by plugins.
 
-## Create a Gallery
+### Create a Gallery
 
 After activate the plugin a new metabox it's shown at the bottom of all Posts, Pages & CPTs. Just click in "Create gallery" button, then add the images you want from the media uploader window to your new gallery.
 
-## How to show and set up the gallery
+### How to show and set up the gallery
 
 TTT Gallery uses shortcodes to display and configure the galleries.
 
@@ -48,37 +48,48 @@ The plugin have some templates included.
   * **Orbit** For the user of foundation. It doesn´t include the foundation orbit javascript file so you have to include it into your theme files. Check it here: http://foundation.zurb.com/docs/components/orbit.html.
   * **Responsiveslides.** More info in http://responsiveslides.com/
   * **Sly.** One of the most easy and fun horizontal slider. Check http://darsa.in/sly/
-
+  
+  IMPORTANT: The name of your template folder is the one you should use in the shortcode parameter.
 
 * Thumbnail Size
 
-`[tttgallery thumbnail="medium"]` Just use the thumbnail name and the plugin resolve to use that image size.
+`[tttgallery thumbnail="medium"]`
 
+To specify an image size just use the defined size of the thumbnail.
 
 * Single Image (always 1st)
 
-`[ttt-gallery-image]` This is a very usefull feature for editors, if you create a gallery and want to show each image separately between the post text just copy&paste this shortcode as many images the gallery have, ttt gallery will show the images from the gallery in the same order of the gallery.
+`[ttt-gallery-image]` 
 
+This is a very useful feature for editors. If you create a gallery and want to show each image separately, just paste this shortcode as many times as images have the gallery. The plugin will show the images in the same order than the gallery
 
-* Selected Image (by position)
+* Select Image (by position)
 
-`[ttt-gallery-image position="1"]` With this option you can select to show just the image in the first position of the gallery, if you change the order of the images in the gallery the shortcode allways show the first one.
+`[ttt-gallery-image position="1"]` 
 
+With this option you can choose to show only the first image of the gallery. If you change the order of the images in the gallery, the shortcode always shows the first one.
 
 * Examples:
 
-`[tttgallery id="42" template="default"]` Means use the Gallery with ID 42 and use the deafault gallery template. IMPORTANT: The name of your template folder is the one you should use in the shortcode paramater.
+`[tttgallery id="42" template="default"]` 
 
-`[ttt-gallery-image id="42" position="4" template="fancybox"]` Only shows the 4th image in the gallery ID 42 and use the fancybox template.
+It means use the gallery with ID 42 and use the default gallery template. 
 
+`[ttt-gallery-image id="42" position="4" template="fancybox"]` 
 
-= Custom Gallery Template =
+Only shows the 4th image from the gallery with ID 42 and use the fancybox template.
 
-Is very easy but you need to know a medium code knowledge, but if don´t have and are use to toucha bit of code just follow this steps and you can learn how it works :). Just need to create a folder in your Theme and inside locate the templates, each template need his own folder to locate the HTML markup, CSS & JS files. ie:
+## Custom Gallery Template
 
-/wp-content/themes//my-theme/ttt-gallery/my-custom-template
+If you have some knowledge of code it's easy to create your own customized template:
 
-Inside this Template folder need to locate all the files you gallery need. To load the javascript and stylesheets from the template to your theme <header> need two files, style.php to indicate where the css and js files are and template.php for the gallery html. ie:
+1. Create a folder in your theme inside ttt-gallery folder.
+
+ie: `/wp-content/themes//my-theme/ttt-gallery/my-custom-template`
+
+2. This folder contains all the files to create the gallery (HTML, CSS & JS) and a style.php file to load the javascript and stylesheet in your theme.
+
+ie: 
 
 /my-custom-template/style.php
 /my-custom-template/template.php
@@ -86,13 +97,12 @@ Inside this Template folder need to locate all the files you gallery need. To lo
 /my-custom-template/images/close.png
 /my-custom-template/js/my-template.js
 
-
-This is the **style.php** code example:
+This is a **style.php** example:
 
 `wp_enqueue_script( 'my-template-styles', plugins_url('my-custom-template/js/my-template.js' , dirname(__FILE__) ), array('jquery'),'1.0', true);`
 `wp_enqueue_style( 'my-template-styles',  plugins_url('my-custom-template/css/my-template.css' , dirname(__FILE__) ) );`
 
-This is the **template.php** code example:
+This is a **template.php** example:
 
 `<div class="my-custom-template">
 	<h2><?php $ttt_gallery->description; ?></h2>
@@ -103,12 +113,14 @@ This is the **template.php** code example:
 	<?php endforeach; ?>
 </div>`
 
-TTT Gallery use the same image meta datas than WordPress Core use and save. This are some of the parameters you can use in your template:
+TTT Gallery use the same image metadata than WordPress Core. These are some of the parameters you can use in your template:
 
-**Gallery Description** `<?php $ttt_gallery->description; ?>`
-**Image Description** `<?php echo $ttt_media['description']; ?`
-**Image Rel HTML parameter** `<?php echo $ttt_gallery->rel; ?>`
-**Image Thumbnail URL** `<?php echo $ttt_media['sizes']['THUMBNAIL_SIZE']['url']; ?>` <- If you want to use an specific Thumbnail Size for your Theme without the user need to set that size just write the thubmnail name you want to use, like: thumbnail, medium, large, full, my-custom-thubmnail-size. More info: https://codex.wordpress.org/Post_Thumbnails#Thumbnail_Sizes [Thumbnail Sizes](http://wordpress.org/ "Codex Wordpress.org")
+* **Gallery Description** `<?php $ttt_gallery->description; ?>`
+* **Image Description** `<?php echo $ttt_media['description']; ?`
+* **Image Rel HTML parameter** `<?php echo $ttt_gallery->rel; ?>`
+* **Image Thumbnail URL** `<?php echo $ttt_media['sizes']['THUMBNAIL_SIZE']['url']; ?>` <
+
+If you want to use an specific thumbnail size for your theme,simply write the thumbnail name you want to use, like: thumbnail, medium, large, full, my-custom-thumbnail-size. More info: https://codex.wordpress.org/Post_Thumbnails#Thumbnail_Sizes [Thumbnail Sizes](http://wordpress.org/ "Codex Wordpress.org")
 
 
 == Hacks ==
@@ -151,4 +163,4 @@ Yes, TTT Gallery was created for give total freedom to developers combined with 
 1. Create a new folder in your Theme `/wp-content/themes/my-theme/ttt-gallery/`
 1. Copy `default` folder & files from `/wp-content/plugins/ttt-gallery/template/front/default` to `/wp-content/themes/my-theme/ttt-gallery/my-custom-template/`
 
-IMPORTANT: The name of your folder is the one you should use in the shortcode paramater.
+IMPORTANT: The name of your folder is the one you should use in the shortcode parameter.
