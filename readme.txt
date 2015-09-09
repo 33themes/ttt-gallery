@@ -1,4 +1,5 @@
-=== TTT Gallery ===
+# TTT Gallery
+
 Contributors: 33themes, gabrielperezs, lonchbox, tomasog
 Tags: image gallery, custom gallery template, gallery markup, post gallery, slider, gallery lightbox
 Requires at least: 3.7
