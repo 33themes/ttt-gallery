@@ -12,9 +12,9 @@ TTT Gallery is a WordPress gallery plugin fully customizable.
 
 ## Description
 
-TTT Gallery allows you to use your own templates to show galleries.
+TTT Gallery allows you to use your own templates to show galleries. You have full control of how a gallery is displayed.
 
-The plugin uses the WP Gallery creator and you can use any thumbnail size set up in the theme or by plugins.
+This plugin uses the WP Gallery creator from the core and you can use any thumbnail size set up in the theme or by plugins.
 
 = Create a Gallery =
 
