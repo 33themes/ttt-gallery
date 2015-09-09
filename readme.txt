@@ -16,27 +16,25 @@ TTT Gallery allows you to use your own templates to show galleries. You have ful
 
 This plugin uses the WP Gallery creator from the core and you can use any thumbnail size set up in the theme or by plugins.
 
-= Create a Gallery =
+## Create a Gallery
 
-After activate the plugin a new metabox will show under all Posts, Pages & CPTs. Just click in "Create gallery" button, then add the images you want from Media to our new gallery.
+After activate the plugin a new metabox it's shown at the bottom of all Posts, Pages & CPTs. Just click in "Create gallery" button, then add the images you want from the media uploader window to your new gallery.
 
-= How do I use the gallery. Shortcodes =
+## How to show and set up the gallery
+
+TTT Gallery uses shortcodes to display and configure the galleries.
 
 * Simple Shortcode
 
-`[tttgallery]` Insert this shortcode into the editor, and that´s it, don´t need to use the Gallery ID or any other configuration. If you have more than one galleries use the same shortcode twice, the plugin handle the position of the galleries by the position they are in the metabox.
+`[tttgallery]` 
 
+Insert this shortcode into the editor, and that´s it, no more configurations. If you have more than one gallery you can use the same shortcode, the plugin handle the position of the galleries according to the position they are in the metabox.
 
-** **Parameters:**
-**id.**
-**template.**
-**thumbnail.**
-**position.**
+* Select Gallery (by ID)
 
-* Selected Gallery (by ID)
+`[tttgallery id="1"]` 
 
-`[tttgallery id="1"]` If you have more than one galleries and wna to only use one of them in your post use the ID of the gallery and only one shortcode.
-
+If you have more than one gallery and you want to use just one of them in your post, use the ID of the gallery and only one shortcode.
 
 * Gallery Template
 
@@ -44,12 +42,12 @@ After activate the plugin a new metabox will show under all Posts, Pages & CPTs.
 
 The plugin have some templates included.
 
-**Default.-** No design, simple markup. It use thickbox for lightbox animation.
-**Fancybox.-** Same as default but use fancybox.
-**Lightbox.-** Same as fancybox :P but with lightbox js.
-**Orbit.-** For the user of foundation. It doesn´t include the foundation orbit javascript file so you have to included into your theme files. Check here: http://foundation.zurb.com/docs/components/orbit.html
-**Responsiveslides.-** More info http://responsiveslides.com/
-**Sly.-** One of the most easiest and funny horizontal slider. Check: http://darsa.in/sly/
+  * **Default.** No design, simple markup. It uses thickbox for lightbox animation.
+  * **Fancybox.** Same as the default but using fancybox.
+  * **Lightbox.** Same as the default but using lightbox.
+  * **Orbit** For the user of foundation. It doesn´t include the foundation orbit javascript file so you have to include it into your theme files. Check it here: http://foundation.zurb.com/docs/components/orbit.html.
+  * **Responsiveslides.** More info in http://responsiveslides.com/
+  * **Sly.** One of the most easy and fun horizontal slider. Check http://darsa.in/sly/
 
 
 * Thumbnail Size
