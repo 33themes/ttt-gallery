@@ -79,11 +79,11 @@ ie: `/wp-content/themes//my-theme/ttt-gallery/my-custom-template`
 
 ie: 
 
-/my-custom-template/style.php
+`/my-custom-template/style.php
 /my-custom-template/template.php
 /my-custom-template/css/my-template.css
 /my-custom-template/images/close.png
-/my-custom-template/js/my-template.js
+/my-custom-template/js/my-template.js`
 
 This is a **style.php** example:
 
