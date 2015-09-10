@@ -1,12 +1,12 @@
 # TTT Gallery
 
-Contributors: 33themes, gabrielperezs, lonchbox, tomasog, 11bits
-Tags: image gallery, custom gallery template, gallery markup, post gallery, slider, gallery lightbox
-Requires at least: 3.7
-Tested up to: 4.3
-Stable tag: 0.2 
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* **Contributors:** 33themes, gabrielperezs, lonchbox, tomasog, 11bits
+* **Tags:** image gallery, custom gallery template, gallery markup, post gallery, slider, gallery lightbox
+* **Requires at least:** 3.7
+* **Tested up to:** 4.3
+* **Stable tag:** 0.2 
+* **License:** GPLv2 or later
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 TTT Gallery is a WordPress gallery plugin fully customizable.
 
@@ -24,36 +24,36 @@ After activate the plugin a new metabox it's shown at the bottom of all Posts, P
 
 TTT Gallery uses shortcodes to display and configure the galleries.
 
-* Simple Shortcode `[tttgallery]` 
+* **Simple Shortcode:** `[tttgallery]` 
 
 Insert this shortcode into the editor, and that´s it, no more configurations. If you have more than one gallery you can use the same shortcode, the plugin handle the position of the galleries according to the position they are in the metabox.
 
-* Select Gallery (by ID) `[tttgallery id="1"]` 
+* **Select Gallery (by ID):** `[tttgallery id="1"]` 
 
 If you have more than one gallery and you want to use just one of them in your post, use the ID of the gallery and only one shortcode.
 
-* Gallery Template `[tttgallery template="default"]`
+* **Gallery Template:** `[tttgallery template="default"]`
 
 The plugin have some templates included:
 
-  * **Default.** No design, simple markup. It uses thickbox for lightbox animation.
-  * **Fancybox.** Same as the default but using fancybox.
-  * **Lightbox.** Same as the default but using lightbox.
-  * **Orbit** For the user of foundation. It doesn´t include the foundation orbit javascript file so you have to include it into your theme files. Check it here: http://foundation.zurb.com/docs/components/orbit.html.
-  * **Responsiveslides.** More info in http://responsiveslides.com/
-  * **Sly.** One of the most easy and fun horizontal slider. Check http://darsa.in/sly/
+  * *Default.* No design, simple markup. It uses thickbox for lightbox animation.
+  * *Fancybox.* Same as the default but using fancybox.
+  * *Lightbox.* Same as the default but using lightbox.
+  * *Orbit* For the user of foundation. It doesn´t include the foundation orbit javascript file so you have to include it into your theme files. Check it here: http://foundation.zurb.com/docs/components/orbit.html.
+  * *Responsiveslides.* More info in http://responsiveslides.com/
+  * *Sly.* One of the most easy and fun horizontal slider. Check http://darsa.in/sly/
   
   IMPORTANT: The name of your template folder is the one you should use in the shortcode parameter.
 
-* Thumbnail Size `[tttgallery thumbnail="medium"]`
+* **Thumbnail Size:** `[tttgallery thumbnail="medium"]`
 
 To specify an image size just use the defined size of the thumbnail.
 
-* Single Image (always 1st) `[ttt-gallery-image]` 
+* **Single Image (always 1st):** `[ttt-gallery-image]` 
 
 This is a very useful feature for editors. If you create a gallery and want to show each image separately, just paste this shortcode as many times as images have the gallery. The plugin will show the images in the same order than the gallery
 
-* Select Image (by position) `[ttt-gallery-image position="1"]` 
+* **Select Image (by position):** `[ttt-gallery-image position="1"]` 
 
 With this option you can choose to show only the first image of the gallery. If you change the order of the images in the gallery, the shortcode always shows the first one.
 
