@@ -35,7 +35,7 @@ The plugin have some templates included:
   * Default. No design, simple markup. It uses thickbox for lightbox animation.
   * Fancybox. Same as the default but using fancybox.
   * Lightbox. Same as the default but using lightbox.
-  * Orbit For the user of foundation. It doesn´t include the foundation orbit javascript file so you have to include it into your theme files. Check it here: http://foundation.zurb.com/docs/components/orbit.html.
+  * Orbit (Foundation). It doesn´t include the foundation orbit javascript file so you have to include it into your theme files. Check it here: http://foundation.zurb.com/docs/components/orbit.html.
   * Responsiveslides. More info in http://responsiveslides.com/
   * Sly. One of the most easy and fun horizontal slider. Check http://darsa.in/sly/
   
