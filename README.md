@@ -86,19 +86,23 @@ ie:
 
 This is a **style.php** example:
 
-`wp_enqueue_script( 'my-template-styles', plugins_url('my-custom-template/js/my-template.js' , dirname(__FILE__) ), array('jquery'),'1.0', true);`
-`wp_enqueue_style( 'my-template-styles',  plugins_url('my-custom-template/css/my-template.css' , dirname(__FILE__) ) );`
+```php
+wp_enqueue_script( 'my-template-styles', plugins_url('my-custom-template/js/my-template.js' , dirname(__FILE__) ), array('jquery'),'1.0', true);`
+wp_enqueue_style( 'my-template-styles',  plugins_url('my-custom-template/css/my-template.css' , dirname(__FILE__) ) );
+```
 
 This is a **template.php** example:
 
-`<div class="my-custom-template">
+```php
+<div class="my-custom-template">
 	<h2><?php $ttt_gallery->description; ?></h2>
 	<?php foreach( $ttt_gallery->medias as $ttt_media ): ?>
 	<a href="<?php echo $ttt_media['sizes']['full']['url']; ?>" title="<?php echo $ttt_media['description']; ?>" rel="<?php echo $ttt_gallery->rel; ?>">
 		<img src="<?php echo $ttt_media['sizes']['thumbnail']['url']; ?>">
 	</a>
 	<?php endforeach; ?>
-</div>`
+</div>
+```
 
 TTT Gallery use the same image metadata than WordPress Core. These are some of the parameters you can use in your template:
 
