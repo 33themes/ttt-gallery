@@ -10,8 +10,6 @@
 
 TTT Gallery is a WordPress gallery plugin fully customizable.
 
-First plugin which create a Gallery in the same simple way Featured Image is related to a Post
-
 ## Description
 
 TTT Gallery allows you to use your own templates to show galleries. You have full control of how a gallery is displayed.
