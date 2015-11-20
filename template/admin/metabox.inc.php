@@ -45,7 +45,7 @@
             <% _.each( medias, function( image ){ %>
             <li data-id="<%=image.id%>" class="<%=image.type%>">
                 <% if (typeof(image.sizes) != "undefined" && typeof(image.sizes.thumbnail) != "undefined") { %>
-                    <img src="<%=image.sizes.thumbnail.url%>" alt="<%=image.caption%>"/>
+                    <img src="<%=image.sizes.thumbnail.url%>" />
                 <% } else { %>
                     <div class="icon"><%=image.type%></div>
                 <% } %>
